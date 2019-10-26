@@ -15,13 +15,13 @@ def recvall(sock):
         if len(part) < BUFF_SIZE:
             # either 0 or end of data
             break
-        time.sleep(0.0001)        
+        time.sleep(0.01)        
     return data
 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = '203.63.149.98'
+host = '220.245.23.104'
 
 port = 5000
 
@@ -34,6 +34,7 @@ while (True):
     
     if (data):
         print("len = [%d]"%len(data))
+
         imgStream = io.BytesIO()
         imgStream.write(data)
         imgStream.seek(0)
